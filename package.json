@@ -1,6 +1,6 @@
 {
   "name": "@alpakaslab/react-magnifier",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
   "author": {"name": "Alpakas Lab"},
@@ -29,5 +29,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/AlpakasLab/react-magnifier.git"
-  }
+  },
+  "files": ["package.json", "/dist", "/node_modules"]
 }
