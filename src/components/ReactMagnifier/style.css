@@ -1,3 +1,5 @@
-.magnifier{
-    background-color: aqua;
+#magnifier{
+    image-rendering: auto;
+    width: 100%;
+    height: 100%;
 }
