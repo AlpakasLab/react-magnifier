@@ -1,7 +1,6 @@
 {
   "name": "@alpakaslab/react-magnifier",
-  "version": "1.0.4",
-  "main": "index.js",
+  "version": "1.0.5",
   "license": "MIT",
   "author": {"name": "Alpakas Lab"},
   "scripts": {
