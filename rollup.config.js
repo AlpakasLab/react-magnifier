@@ -21,7 +21,7 @@ export default [
         plugins: [
             external(),
             resolve(),
-            commonjs(),
+            commonjs({ extensions: ['.js', '.ts'] }),
             typescript({ tsconfig: './tsconfig.json' }),
             postcss(),
             terser()
