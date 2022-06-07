@@ -1,8 +1,8 @@
 {
-  "name": "@alpakaslab/react-magnifier",
+  "name": "react-magnifier",
   "version": "1.1.0",
   "license": "MIT",
-  "author": {"name": "Alpakas Lab"},
+  "author": {"name": "Davi Lhlapak Rosa", "email": "alpkauniverse@gmail.com"},
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },

@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-          scope: '@AlpakasLab'
+          scope: 'alpakaslab'
       - run: yarn
       - run: yarn build
       - run: yarn publish --access public
