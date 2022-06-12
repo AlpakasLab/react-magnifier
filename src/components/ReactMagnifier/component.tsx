@@ -1,10 +1,10 @@
 import React, { FC, useCallback, useEffect, useRef, useState } from 'react'
 
 import './style.css'
-import { CANVAS_HEIGHT, CANVAS_WIDTH, createZoomComponentFactory, ReactMagnifierProps } from './types'
+import { createZoomComponentFactory, ReactMagnifierProps } from './types'
 import createZoomComponent from './zoom'
 
-const ReactMagnifier: FC<ReactMagnifierProps> = ({image}) => {
+const ReactMagnifier: FC<ReactMagnifierProps> = ({image, height, width}) => {
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const [zoomFunctions, setZoomFunctions] = useState<createZoomComponentFactory | null>(null)
 
@@ -44,8 +44,8 @@ const ReactMagnifier: FC<ReactMagnifierProps> = ({image}) => {
         <canvas
             id="magnifier"
             ref={canvasRef}
-            width={CANVAS_WIDTH}
-            height={CANVAS_HEIGHT}
+            width={width}
+            height={height}
             onMouseMove={e => {
                 const { x, y } = getMousePosition(e)
 

@@ -1,4 +1,4 @@
-import { CANVAS_HEIGHT, CANVAS_WIDTH, createZoomComponentFactory } from './types'
+import { createZoomComponentFactory } from './types'
 
 const createZoomComponent = (
     screen: HTMLCanvasElement,
@@ -9,8 +9,8 @@ const createZoomComponent = (
         box: {
             x: 0,
             y: 0,
-            w: CANVAS_WIDTH / 2,
-            h: CANVAS_HEIGHT / 2
+            w: screen.clientWidth / 2,
+            h: screen.clientHeight / 2
         },
         imageSrc: ''
     }
@@ -25,23 +25,23 @@ const createZoomComponent = (
             if (zoom) {
                 let x = box.x < box.w / 2 ? 0 : box.x - box.w / 2
 
-                if (box.x > CANVAS_WIDTH - box.w / 2) {
-                    x = CANVAS_WIDTH - box.w
+                if (box.x > screen.clientWidth - box.w / 2) {
+                    x = screen.clientWidth - box.w
                 }
 
                 let y = box.y < box.h / 2 ? 0 : box.y - box.h / 2
 
-                if (box.y > CANVAS_WIDTH - box.h / 2) {
-                    y = CANVAS_WIDTH - box.h
+                if (box.y > screen.clientWidth - box.h / 2) {
+                    y = screen.clientWidth - box.h
                 }
 
-                const canvasWidthPercent = Math.round((100 * x) / CANVAS_WIDTH)
+                const canvasWidthPercent = Math.round((100 * x) / screen.clientWidth)
 
                 const imageWidthPx =
                     (image.naturalWidth * canvasWidthPercent) / 100
 
                 const canvasHeightPercent = Math.round(
-                    (100 * y) / CANVAS_HEIGHT
+                    (100 * y) / screen.clientHeight
                 )
 
                 const imageHeightPx =
@@ -55,18 +55,18 @@ const createZoomComponent = (
                     image.naturalHeight / 2,
                     0,
                     0,
-                    CANVAS_WIDTH,
-                    CANVAS_HEIGHT
+                    screen.clientWidth,
+                    screen.clientHeight
                 )
             } else {
-                drawer.drawImage(image, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
+                drawer.drawImage(image, 0, 0, screen.clientWidth, screen.clientHeight)
             }
         }
     }
 
     const renderScreen = () => {
         if (screen && drawer) {
-            drawer.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
+            drawer.clearRect(0, 0, screen.clientWidth, screen.clientHeight)
 
             renderObjects()
 
@@ -75,7 +75,7 @@ const createZoomComponent = (
     }
 
     const startZoom = () => {
-        drawer.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT)
+        drawer.clearRect(0, 0, screen.clientWidth, screen.clientHeight)
 
         renderScreen()
     }

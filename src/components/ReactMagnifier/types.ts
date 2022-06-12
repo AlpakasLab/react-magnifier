@@ -1,5 +1,7 @@
 export interface ReactMagnifierProps{
     image: string
+    width: number
+    height: number
 }
 
 export interface createZoomComponentFactory{
@@ -9,7 +11,3 @@ export interface createZoomComponentFactory{
     activeZoom(): void
     disableZoom(): void
 }
-
-export const CANVAS_WIDTH = 534
-
-export const CANVAS_HEIGHT = 560
