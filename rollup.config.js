@@ -16,7 +16,7 @@ export default [
                 file: packageJson.main,
                 format: 'cjs',
                 sourcemap: true,
-                name: 'react-magnifier'
+                name: '@alpakaslab/react-magnifier'
             },
             {
                 file: packageJson.module,
