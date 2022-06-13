@@ -1,5 +1,6 @@
 export interface ReactMagnifierProps{
     image: string
+
     width: number
     height: number
 }

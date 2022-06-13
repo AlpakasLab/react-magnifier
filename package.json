@@ -8,17 +8,30 @@
   },
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.2",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.4",
+    "@storybook/addon-actions": "^6.5.8",
+    "@storybook/addon-essentials": "^6.5.8",
+    "@storybook/addon-interactions": "^6.5.8",
+    "@storybook/addon-links": "^6.5.8",
+    "@storybook/builder-webpack4": "^6.5.8",
+    "@storybook/manager-webpack4": "^6.5.8",
+    "@storybook/react": "^6.5.8",
+    "@storybook/testing-library": "^0.0.12",
     "@types/react": "^18.0.12",
+    "babel-loader": "^8.2.5",
     "postcss": "^8.4.14",
     "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "rollup": "^2.75.5",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -30,7 +43,8 @@
   },
   "private": false,
   "peerDependencies": {
-    "react": "^18.1.0"
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -89,5 +103,6 @@
         }
       ]
     ]
-  }
+  },
+  "dependencies": {}
 }
