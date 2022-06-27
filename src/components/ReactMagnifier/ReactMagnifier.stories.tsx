@@ -11,6 +11,26 @@ export default {
   },
 } as ComponentMeta<typeof ReactMagnifier>;
 
-const Template: ComponentStory<typeof ReactMagnifier> = (args) => <ReactMagnifier {...args} width={350} height={350} />;
+const Template: ComponentStory<typeof ReactMagnifier> = (args) => {
+  return <ReactMagnifier 
+    {...args} 
+    width={400} 
+    height={400} 
+    breakpoints={{
+      200: {
+        width: 200,
+        height: 200
+      },
+      300: {
+        width: 280,
+        height: 280
+      },
+      400: {
+        width: 400,
+        height: 400
+      }
+    }} 
+  />
+}
 
 export const Main = Template.bind({});

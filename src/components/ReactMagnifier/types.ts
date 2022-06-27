@@ -3,6 +3,11 @@ export interface ReactMagnifierProps{
 
     width: number
     height: number
+
+    breakpoints?: Record<number, {
+        width: number
+        height: number
+    }>
 }
 
 export interface createZoomComponentFactory{
