@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "target": "es2016", 
+    "target": "ESNext", 
     "jsx": "react",
     "lib": ["ESNext", "dom"],
     "module": "ESNext",
