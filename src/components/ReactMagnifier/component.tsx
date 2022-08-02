@@ -76,11 +76,6 @@ const ReactMagnifier: FC<ReactMagnifierProps> = ({image, height, width, breakpoi
                 mediaQuerys.forEach(media => media.removeEventListener("change", handleOrientationChange))
             }
         }
-       
-
-        
-
-        
     },[])
     
     return (
