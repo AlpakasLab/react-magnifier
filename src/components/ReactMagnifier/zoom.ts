@@ -23,6 +23,8 @@ const createZoomComponent = (
             image.src = imageSrc
 
             if (zoom) {
+                var scale = Math.min(screen.clientWidth / image.naturalWidth, screen.clientHeight / image.naturalHeight);
+
                 let x = box.x < box.w / 2 ? 0 : box.x - box.w / 2
 
                 if (box.x > screen.clientWidth - box.w / 2) {
@@ -47,16 +49,19 @@ const createZoomComponent = (
                 const imageHeightPx =
                     (image.naturalHeight * canvasHeightPercent) / 100
 
+                var dx = (screen.clientWidth / 2) - (image.naturalWidth / 2) * scale;
+                var dy = (screen.clientHeight / 2) - (image.naturalHeight / 2) * scale;
+
                 drawer.drawImage(
                     image,
                     imageWidthPx,
                     imageHeightPx,
                     image.naturalWidth / 2,
                     image.naturalHeight / 2,
-                    0,
-                    0,
-                    screen.clientWidth,
-                    screen.clientHeight
+                    dx,
+                    dy,
+                    image.naturalWidth * scale,
+                    image.naturalHeight * scale
                 )
             } else {
                 var scale = Math.min(screen.clientWidth / image.naturalWidth, screen.clientHeight / image.naturalHeight);
